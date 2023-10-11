@@ -17,10 +17,11 @@ const nextConfig = {
   //   styledComponents: true,
   // },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
-  experimental: {
-    reactRoot: 'concurrent',
-    appDir: true,
-  },
+  // https://github.com/pmndrs/react-three-next/issues/139
+  // experimental: {
+  //   // reactRoot: 'concurrent',
+  //   // appDir: true,
+  // },
   images: {},
   webpack(config, { isServer }) {
     if (!isServer) {

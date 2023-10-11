@@ -1,0 +1,18 @@
+@import '_base';
+
+.container-2400 {
+  @apply rounded-lg;
+  // max-width: 90%;
+  max-width: 150rem;
+  margin-block: 9.25925925925926vw;
+}
+.grid > .col-span-1,
+.container-2400:not(.grid) {
+  @apply rounded-md;
+  padding: 1.5em 3em; //TODO e
+}
+
+.pre-heading + h2:first-child,
+h2:first-child {
+  @apply mt-0;
+}
