@@ -1,9 +1,11 @@
+import WebglCanvas from './WebglCanvas';
+
 function HeroLeft() {
   return (
-    <div className='_max-w-screen-xl mx-auto basis-1/2 px-4 py-8 text-center sm:text-left lg:px-12 lg:py-16'>
+    <div className='_max-w-screen-xl bg-black _mx-auto _basis-1/2 _px-4 py-32 _min-h-screen flex-col flex justify-end _w-full _text-center items-between gap-y-6 _sm:text-left _lg:px-12 _lg:py-16'>
       <a
         href='#'
-        className='mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 p-1 pr-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700'
+        className='hidden mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 p-1 pr-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700'
         role='alert'
       >
         <span className='mr-3 rounded-full bg-primary-600 px-4 py-1.5 text-xs text-white'>New</span>{' '}
@@ -16,14 +18,16 @@ function HeroLeft() {
           ></path>
         </svg>
       </a>
-      <h1 className='_text-4xl _font-extrabold _dark:text-white _md:text-5xl _lg:text-6xl mb-4 leading-none tracking-tight text-gray-900'>
-        We invest in the world’s potential
+      {/* <span>Hi, I'm</span> */}
+      <h1 className='mb-0 _text-4xl _font-extrabold dark:text-white _md:text-5xl _lg:text-6xl leading-none tracking-tight text-gray-900'>
+        {/* We invest in the world’s potential */}
+        Jesse Gansler
       </h1>
-      <p className='_mb-8 _text-lg _font-normal _sm:px-16 _lg:text-xl _xl:px-48 max-w-2xl text-gray-500 dark:text-gray-400'>
-        Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and
-        drive economic growth.
+      <p className='_mb-8 mb-0 _text-lg _font-normal _sm:px-16 _lg:text-xl _xl:px-48 max-w-2xl text-gray-500 dark:text-gray-400'>
+        I'm a lead software engineer specializing in building exceptional digital experiences. Currently, I'm focused on
+        building accessible, human-centered products at Temper / Forge.
       </p>
-      <div className='mb-8 flex flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0 lg:mb-16'>
+      <div className='hidden mb-0 flex flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0 lg:mb-16'>
         <a
           href='#'
           className='inline-flex items-center justify-center rounded-lg bg-primary-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900'
@@ -57,7 +61,7 @@ function HeroLeft() {
             Watch video
           </a> */}
       </div>
-      <div className='_px-4 _md:max-w-screen-md _lg:px-36 mx-auto text-center sm:text-left lg:max-w-screen-lg'>
+      <div className='hidden _px-4 _md:max-w-screen-md _lg:px-36 mx-auto text-center sm:text-left lg:max-w-screen-lg'>
         <span className='font-semibold uppercase text-gray-400'>FEATURED IN</span>
         <div className='mt-8 flex flex-wrap items-center justify-center text-gray-500 sm:justify-between'>
           <a href='#' className='mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0'>
@@ -163,11 +167,18 @@ function HeroRight() {
 
 export default function Hero() {
   return (
-    <section className='_dark:bg-gray-900 bg-white'>
-      <div className='flex'>
-        <HeroLeft />
-        <HeroRight />
+    <section className='hero--home  _dark:bg-gray-900 _bg-white relative z-10'>
+      <div className='bottom-corner h-screen flex items-end justify-start'>
+        <div className="hero-top _section-full">
+          {/* <div></div> */}
+         {/*  <div className="hero-top-logo"> */}
+            <HeroLeft />
+          {/* </div> */}
+          {/* <div className="hero-top-left"></div> */}
+        </div>
+        {/* <HeroRight /> */}
       </div>
+      <div className='hero--bg absolute top-0 left-0 w-full h-screen z-[-1]'>{/* <WebglCanvas /> */}</div>
     </section>
   )
 }

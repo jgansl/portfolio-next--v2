@@ -1,6 +1,7 @@
 ## TODO
 - [ ] PWA support is disabled.
 - [ ] A11y https://chakra-ui.com/
+- [ ] format on build
 
 
 ## Resources
@@ -29,10 +30,30 @@ https://patrickheng.com/
 https://www.echostreetcapital.com/goodco
 https://www.adriengervaix.com/
 https://iuri.is/
+https://www.joshwcomeau.com/
 https://fireship.io/
 https://www.joshwcomeau.com/
 https://wizardry-technique.webflow.io/
 
+## Codepens
+[Social](https://codepen.io/dev_loop/pen/jOborLv)
+[Hamburger](https://codepen.io/chandrashekhar/pen/rJxoGE)
+[Marquee](https://codepen.io/hexagoncircle/pen/wvmjomb)
+[Card Hover](https://codepen.io/Hyperplexed/pen/MWQeYLW)
+[Trending](https://codepen.io/trending)
+[Glass Perspective](https://codepen.io/shuding/pen/NWEGPjY)
+[Glass Button](https://codepen.io/uixmat/pen/rNodjee)
+[Figma Box](https://codepen.io/carterfromsl/pen/LYqYRyN)
+[https://fireship.io/]
+[zzz](https://zzz.dog/)
+[Canvas](https://codepen.io/atzedent/pen/RwEqBWO)
+[Canvas](https://codepen.io/cantelope/pen/MWZGLRL)
+[https://codepen.io/avstorm/pen/GRBeXLY]
+[Logo](https://codepen.io/Hyperplexed/details/KKrRLXM)
+
+[Particle System](https://codepen.io/nathanlong/pen/eYbYyQK)
+[Blog/Showcase](https://codepen.io/supah/pen/xxJMbbg)
+[Mobile Nav](https://codepen.io/v_Bauer/pen/WNroMOq)
 
 ## Fixes
 https://github.com/pmndrs/react-three-next/issues/139

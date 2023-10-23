@@ -1,6 +1,9 @@
 'use client'
 
+import ClientStrip from '@/components/client/Clients'
 import Hero from '@/components/hero/Hero'
+// import Marquee from '@/components/marquee/Marquee'
+import Services from '@/components/services/Services'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
@@ -28,6 +31,8 @@ export default function Page() {
   return (
     <>
       <Hero />
+      {/* <ClientStrip /> */}
+      <Services /> 
       <div className='_lg:w-4/5  mx-auto flex hidden w-full flex-col flex-wrap items-center md:flex-row-reverse'>
         {/* jumbo */}
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/4 md:text-left'>
@@ -108,7 +113,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section className='container-2400'>
+      <section className='hidden container-2400'>
         <h2 className='h1 max-w-[8em]'>Let's work together</h2>
         <p>Whilte I currently not looking for new job opportunities</p>
 

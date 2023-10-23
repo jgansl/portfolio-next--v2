@@ -1,4 +1,9 @@
 @import '_base';
+@import '_client-strip';
+@import '_footer';
+@import '_hamburger';
+@import '_why-card-wrapper';
+// @import '_marquee';
 
 .container-2400 {
   @apply rounded-lg;
@@ -15,4 +20,104 @@
 .pre-heading + h2:first-child,
 h2:first-child {
   @apply mt-0;
+}
+
+.header-links {
+  @apply rounded-full px-3 py-2 relative z-10;
+  border: 1px solid black;
+  overflow: hidden;
+  &:before {
+    @apply 
+    absolute
+    bg-white
+    inset-0
+    left-0
+    h-full
+    opacity-75
+    top-0
+    w-full
+    ;
+    content: "";
+    z-index: -1;
+    filter: blur(8);
+  }
+  
+}
+
+.logo-link {
+  img {
+    width: auto;
+    margin-right: 0;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.header-link {
+  a {
+    //active
+    // @apply block rounded bg-primary-700 py-2 pl-3 pr-4 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700;
+    @apply block border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50  lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent;
+    //  lg:dark:hover:text-white;
+    // @apply dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+    padding: 0.375rem 0.75rem;
+    @apply rounded-full;
+
+    &[aria-current='page'] {
+      background: blue;
+      color: #fff;
+    }
+  }
+}
+
+
+.menu-links {
+  row-gap: 1rem;
+}
+
+.menu-link {
+  @apply relative;
+  font-size: 5em;
+  line-height: 1.15;
+  sup {
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+// infiinite scroll
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.hero--home {
+  @apply relative z-10;
+  &:before {
+    @apply absolute z-[-1];
+    content: "";
+    border-radius: 2rem;
+    background: #357;
+    top: 0;//calc(var(--inline-padding) / 2);
+    height: 100%;//calc(100% - var(--inline-padding));
+    width: 100%;//calc(100% + var(--inline-padding));
+    left: 0;//calc(var(--inline-padding) / -2);
+  }
+}
+
+.bottom-corner > * {
+  border-radius: 0 3rem 0 0;
 }
