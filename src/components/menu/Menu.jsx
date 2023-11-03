@@ -27,7 +27,7 @@ export default function Menu({ isOpen }) {
         exit={{ opacity: 0 }}
         className='fixed top-0 left-0 z-50 w-screen h-screen bg-primary text-white _dark:bg-gray-900 _bg-white'
       >
-        <div className='flex h-full'>
+        <div className='flex flex-col md:flex-wrow h-full'>
           <MenuLeft />
           <MenuRight />
         </div>
@@ -67,8 +67,8 @@ function MenuRight() {
     <div id='menuRight' className='flex items-center_basis-2/3 bg-black _bg-primary-500 grow px-12'>
       {/* <span className='uppercase'>navigation</span> */}
       <nav className='w-full items-center justify-between lg:order-1 lg:flex lg:w-auto' id='mobile-menu-3'>
-        <InfiniteScroll />
-        <ul className='hidden menu-links mt-4 flex flex-col font-medium lg:mt-0 _lg:flex-row _lg:space-x-8 _px-12'>
+        {/* <InfiniteScroll /> */}
+        <ul className='menu-links mt-4 flex flex-col font-medium lg:mt-0 _lg:flex-row _lg:space-x-8 _px-12'>
           <li className='menu-link'>
             <a href='#' className='' aria-current='page'>
               Home
