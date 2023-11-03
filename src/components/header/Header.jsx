@@ -20,10 +20,10 @@ export default function Header() {
 
   return (
     <>
-      <header id='site-header' className='fixed w-[100dvw] left-0 top-2 z-40'>
+      <header id='site-header' className='absolute w-[100dvw] left-0 top-6 z-40'>
         <nav className='_dark:bg-gray-800 _border-gray-200 _px-4 _py-2.5 _lg:px-6 w-full _bg-white'>
           <div className='_max-w-screen-xl _px-4 mx-auto flex flex-wrap items-center justify-between rounded-lg _bg-white py-2.5 _dark:bg-gray-800 _lg:px-6'>
-            <a href='/' className='logo-link flex items-center relative z-[100]'>
+            <a href='/' className='hidden logo-link flex items-center relative z-[100]'>
               {/* <img src='https://flowbite.com/docs/images/logo.svg' className='mr-3 h-6 sm:h-9' alt='Flowbite Logo' /> */}
               <Image src='/img/logo.svg' className='_mr-3 _h-6 _sm: h-9' alt='Site Logo' height={150} width={150} />
               <span className='sr-only self-center whitespace-nowrap text-xl font-semibold _dark:text-white'>
@@ -43,7 +43,7 @@ export default function Header() {
               >
                 Contact
               </a>
-              <div className='_container relative z-[100]'>
+              <div className='_container fixed top-10 right-14 z-[100]'>
                 <div className='menu' onClick={toggleMenu}>
                   <div className={`hambergerIcon ${isOpen ? 'open' : ''}`}></div>
                 </div>

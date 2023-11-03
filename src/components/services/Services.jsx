@@ -20,15 +20,16 @@ export default function Services() {
     },
   ]
   return (
-    <section className='services home-why'>
+    <section id="services" className='services home-why'>
       <div className='services--content'>
         <p className='mb-3'>
           <strong>01 - Services</strong>
         </p>
         <div>
           <h2 className='h1 max-w-[24em]'>
-            As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native
-            apps.
+            What I Do
+            {/* As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native
+            apps. */}
           </h2>
         </div>
       </div>
@@ -66,7 +67,7 @@ export default function Services() {
               </div>
             </div>
             <div className='card-bottom'>
-              <h3 className='card-title'>Over 5,000 videos and growing</h3>
+              <h3 className='card-title'>AI Integrations</h3>
               <div className='card-description'>
                 <p className='card-text'>
                   Whether you’re building for iOS, Android, or Flutter, you can find the largest and highest-quality
@@ -91,7 +92,7 @@ export default function Services() {
               </div>
             </div>
             <div className='card-bottom'>
-              <h3 className='card-title'>50+ professional-level books</h3>
+              <h3 className='card-title'>Web Development</h3>
               <div className='card-description'>
                 <p className='card-text'>
                   With books covering everything from beginning mobile development, to advanced topics like design
@@ -116,7 +117,7 @@ export default function Services() {
               </div>
             </div>
             <div className='card-bottom'>
-              <h3 className='card-title'>Curated learning paths</h3>
+              <h3 className='card-title'>Mobile Development</h3>
               <div className='card-description'>
                 <p className='card-text'>
                   From UI design, to data and networking, to IDEs and tools, to software engineering practices, curated

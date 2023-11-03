@@ -39,7 +39,10 @@ export default function Menu({ isOpen }) {
 
 function MenuLeft() {
   return (
-    <div id='menuLeft' className='basis-[450px] bg-black border-solid border-r-2 border-white _p-12 hidden md:flex flex-col justify-center'>
+    <div
+      id='menuLeft'
+      className='basis-[450px] bg-black border-solid border-r-2 border-white _p-12 hidden md:flex flex-col justify-center'
+    >
       {/* <a href='/' className='logo-link flex items-center'>
         {/* <img src='https://flowbite.com/docs/images/logo.svg' className='mr-3 h-6 sm:h-9' alt='Flowbite Logo' /> * /}
         <Image src='/img/logo.svg' className='mr-3 h-6 sm:h-9' alt='Site Logo' height={150} width={150} />
@@ -48,6 +51,7 @@ function MenuLeft() {
         </span>
       </a> */}
       <ul>
+        <li>Resume</li>
         <li>LinkedIn</li>
         <li>Github</li>
         <li>Instagram</li>
@@ -64,41 +68,54 @@ function MenuRight() {
       {/* <span className='uppercase'>navigation</span> */}
       <nav className='w-full items-center justify-between lg:order-1 lg:flex lg:w-auto' id='mobile-menu-3'>
         <InfiniteScroll />
+        <ul className='hidden menu-links mt-4 flex flex-col font-medium lg:mt-0 _lg:flex-row _lg:space-x-8 _px-12'>
+          <li className='menu-link'>
+            <a href='#' className='' aria-current='page'>
+              Home
+              <sup>01</sup>
+            </a>
+          </li>
+          <li className='menu-link'>
+            <a href='#' className=''>
+              Services
+              <sup>02</sup>
+            </a>
+          </li>
+          <li className='menu-link'>
+            <a href='#' className=''>
+              Experience
+              <sup>02</sup>
+            </a>
+          </li>
+          {/* <li className='menu-link'>
+            <a href='#' className=''>
+              Products
+            </a>
+          </li> */}
+          {/* <li className='menu-link'>
+            <a href='#' className=''>
+              Case Studies
+            </a>
+          </li> */}
+          <li className='menu-link'>
+            <a href='#' className=''>
+              Blog
+              <sup>03</sup>
+            </a>
+          </li>
+          {/* <li className='menu-link'>
+          <a href='#' className=''>
+            Team
+          </a>
+        </li> */}
+          <li className='menu-link'>
+            <a href='#' className=''>
+              Contact
+              <sup>04</sup>
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   )
 }
-
-// <ul className='hidden menu-links mt-4 flex flex-col font-medium lg:mt-0 _lg:flex-row _lg:space-x-8 _px-12'>
-//   <li className='menu-link'>
-//     <a href='#' className='' aria-current='page'>
-//       Home
-//       <sup>01</sup>
-//     </a>
-//   </li>
-//   <li className='menu-link'>
-//     <a href='#' className=''>
-//       Products
-//     </a>
-//   </li>
-//   <li className='menu-link'>
-//     <a href='#' className=''>
-//       Case Studies
-//     </a>
-//   </li>
-//   <li className='menu-link'>
-//     <a href='#' className=''>
-//       Blog
-//     </a>
-//   </li>
-//   {/* <li className='menu-link'>
-//         <a href='#' className=''>
-//           Team
-//         </a>
-//       </li> */}
-//   <li className='menu-link'>
-//     <a href='#' className=''>
-//       Contact
-//     </a>
-//   </li>
-// </ul>

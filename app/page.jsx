@@ -1,8 +1,9 @@
 'use client'
 
-import ClientStrip from '@/components/client/Clients'
+// import ClientStrip from '@/components/client/Clients'
 import Hero from '@/components/hero/Hero'
 // import Marquee from '@/components/marquee/Marquee'
+import Experience from '@/components/experience/Experience'
 import Services from '@/components/services/Services'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
@@ -32,8 +33,9 @@ export default function Page() {
     <>
       <Hero />
       {/* <ClientStrip /> */}
+      <Experience /> 
       <Services /> 
-      <div className='_lg:w-4/5  mx-auto flex hidden w-full flex-col flex-wrap items-center md:flex-row-reverse'>
+      <div className='_lg:w-4/5  mx-auto flex w-full flex-col flex-wrap items-center md:flex-row-reverse'>
         {/* jumbo */}
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/4 md:text-left'>
           <p className='w-full uppercase'>Next + React Three Fiber</p>
@@ -85,11 +87,11 @@ export default function Page() {
         </div>
       </div> */}
 
-      <section className='container-2400 hidden bg-red-300'>
+      {/* <section className='container-2400 hidden bg-red-300'>
         <h2>Does This Sound Familiar...</h2>
-      </section>
+      </section> */}
 
-      <section className='container-2400 grid hidden gap-3 xl:grid-cols-3'>
+      {/* <section className='container-2400 grid hidden gap-3 xl:grid-cols-3'>
         <div className='col-span-1'>
           <h2 className='xl:!mt-[-0.25em]'>Be the best you with EQ</h2>
         </div>
@@ -101,7 +103,7 @@ export default function Page() {
             <p>Not having your own emotions</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className='container-2400 hidden bg-blue-400 text-center'>
         <p className='pre-heading'>Built out of frustration</p>

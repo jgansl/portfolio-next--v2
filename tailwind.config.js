@@ -1,7 +1,14 @@
+import { nextui } from '@nextui-org/theme'
+
 module.exports = {
   mode: 'jit',
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'], // remove unused styles in production
-  darkMode: 'media', // or 'media' or 'class'; darkMode: 'class',
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+  ], // remove unused styles in production
+  darkMode: 'class', // or 'media' or 'class'; darkMode: 'class',
+  plugins: [nextui()],
   theme: {
     extend: {
       colors: {

@@ -35,14 +35,17 @@ export default function Footer() {
             <Image src='/img/logo.svg' className='mr-3 h-6 sm:h-9' alt='Site Logo' height={150} width={36} />
             <span className='h5'>Jesse Gansler</span>
           </Link> */}
-          <h2 className='_xl:max-w-md mt-12 mb-4 h1 text-balance'>We would love to hear from you.</h2>
+          <h2 id='contact' className='_xl:max-w-md mt-12 mb-4 h1 text-balance' style={{ scrollMarginTop: 50 }}>
+            {/* We would love to hear from you. */}
+            Contact
+          </h2>
           {/* <p className='max-w-md mb-0'>Feel free to reach our if you want to collaborate with us, or simply have a chat</p> */}
           <p className='max-w-lg mb-0'>
             Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a
             interest, idea, question or just want to say hi, I’ll try my best to get back to you!
           </p>
           <Link href='/' className='btn btn--primary my-6 font-bold'>
-            Get in Touch
+            Say Hello
           </Link>
           <p className='mb-0'>Don&apos;t like the forms? Drop us a line via email.</p>
           <p className='mb-0'>
@@ -58,17 +61,15 @@ export default function Footer() {
           className='basis-1/2 flex grow flex-col sm:grid grid-cols-2 _h-full justify-between lg:grid xl:grid-cols-2 _items-end gap-6 _text-right'
         >
           <div className='text-left'>
-            <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>Contact Us</h2>
-            {email ?? (
-              <p className='mb-1'>
-                <strong>
-                  <small>Email</small>
-                </strong>
-                <br />
-                <a>{email}</a>
-              </p>
-            )}
-            {phone ?? (
+            <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>Contact Info</h2>
+            {/* {email ?? ( */}
+            <p className='mb-1'>
+              <strong>
+                <a href='mailto:jessegansler'>{email}</a>
+              </strong>
+            </p>
+            {/* )} */}
+            {phone && (
               <p className='mb-1'>
                 <strong>
                   <small>Phone</small>
@@ -77,12 +78,32 @@ export default function Footer() {
                 <a>{phone}</a>
               </p>
             )}
+            <p className='mb-1'>
+              <strong>
+                <a href='https://linkedin.com/in/jessegansler'>LinkedIn</a>
+              </strong>
+            </p>
+            <p className='mb-1'>
+              <strong>
+                <a href='https://twitter.com/jessegansler'>X</a>
+              </strong>
+            </p>
+            <p className='mb-1'>
+              <strong>
+                <a href='https://instagram.com/jessegansl'>Instagram</a>
+              </strong>
+            </p>
+            <p className='mb-1'>
+              <strong>
+                <a href='https://telegram.com/jessegansl'>Telegram</a>
+              </strong>
+            </p>
             <p className='mb-1'>Seattle, WA</p>
           </div>
           {/* {[1, 2].map((idx) => ( */}
           <div>
             {/* <div key={idx}> */}
-            <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>Resources</h2>
+            <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>Links</h2>
             <ul className='text-gray-600 dark:text-gray-400'>
               <li>
                 <a href='https://flowbite.com' className='hover:underline'>

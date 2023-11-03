@@ -1,58 +1,35 @@
-'use client'
-import { useState } from 'react';
-// // import { gsap, ScrollSmoother } from 'gsap';
-// import gsap from 'gsap'
-// gsap.registerPlugin(ScrollSmoother) 
+// import WebglCanvas from './WebglCanvas';
+import '@/styles/_hero-home.scss'
+
 export default function Hero() {
-  
-  const [perspectiveOrigin, setPerspectiveOrigin] = useState({
-    x: 50,
-    y: 50,
-  })
-  const multiplier = 25
-
-  function handleMouseMove(ev) {
-    if( typeof window !== 'undefined' ) {
-      console.log((window.innerWidth / 2 - ev.clientX) / window.innerWidth)
-      setPerspectiveOrigin({
-        x: 50 + ((window.innerWidth / 2 - ev.clientX) * multiplier) / window.innerWidth,
-        y: 50 + ((window.innerHeight / 2 - ev.clientY) * multiplier * 0.5 ) / window.innerHeight,
-        // y: ev.pageY
-      })
-    }
-  }
-
-  
-  // useLayoutEffect(() => {
-    
-
-  //   // ScrollSmoother.create({
-  //   //   smooth: 1,
-  //   //   effects: true,
-  //   // })
-
-  //   // const anchor = document.querySelector('.hero-bg');
-  //   // const multiplier = 25
-  //   // document.onmousemove = function (e) {
-  //   //   let x = ((window.innerWidth / 2 - e.clientX) * multiplier) / window.innerWidth
-  //   //   // let y = (window.innerHeight / 2 - e.clientY ) * multiplier / window.innerWidth
-  //   //   // console.log(x, y)
-  //   //   // anchor.style.perspectiveOrigin = `${50 + x}% ${ 50 + y}%`
-  //   //   anchor.style.perspectiveOrigin = `${50 + x}% 50%`
-  //   // }
-  // }, []);
-
   return (
-    <section className='relative z-10 min-h-screen flex flex-col items-center text-center justify-center _bg-white _dark:bg-gray-900'>
-      {/* <div className='py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12'> */}
+    <section className='hero--home _dark:bg-gray-900 _bg-white relative z-10'>
+      <div className='bottom-corner h-screen flex items-end justify-start'>
+        <div className='hero-top _section-full'>
+          {/* <div></div> */}
+          {/*  <div className="hero-top-logo"> */}
+          <HeroLeft />
+          {/* </div> */}
+          {/* <div className="hero-top-left"></div> */}
+        </div>
+        {/* <HeroRight /> */}
+      </div>
+      <div className='hero--bg absolute top-0 left-0 w-full h-screen z-[-1]'>{/* <WebglCanvas /> */}</div>
+    </section>
+  )
+}
+
+function HeroLeft() {
+  return (
+    <div className='_max-w-screen-xl mb-[1.125rem] p-6 rounded-tr-xl bg-black _mx-auto _basis-1/2 _px-4 py-32 _min-h-screen flex-col flex justify-end _w-full _text-center items-between gap-y-6 _sm:text-left _lg:px-12 _lg:py-16'>
       <a
         href='#'
-        className='hidden _inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
+        className='hidden mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 p-1 pr-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700'
         role='alert'
       >
-        <span className='text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3'>New</span>{' '}
-        <span className='text-sm font-medium'>New is out! See what's new</span>
-        <svg className='ml-2 w-5 h-5' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
+        <span className='mr-3 rounded-full bg-primary-600 px-4 py-1.5 text-xs text-white'>New</span>{' '}
+        <span className='text-sm font-medium'>Flowbite is out! See what&apos;s new</span>
+        <svg className='ml-2 h-5 w-5' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
           <path
             fillRule='evenodd'
             d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
@@ -60,51 +37,53 @@ export default function Hero() {
           ></path>
         </svg>
       </a>
-      <h1 className='max-w-2xl pointer-events-none mb-4 _text-4xl _font-extrabold _tracking-tight _leading-none _text-gray-900 _md:text-5xl _lg:text-6xl dark:text-white text-white'>
-        Turning Your Paperballs into Paperplanes.
+      {/* <span>Hi, I'm</span> */}
+      <h1 className='mb-0 _text-4xl _font-extrabold dark:text-white _md:text-5xl _lg:text-6xl leading-none tracking-tight text-gray-900'>
+        {/* We invest in the world’s potential */}
+        Jesse Ganslers
       </h1>
-      <p className='max-w-7xl pointer-events-none mb-8 _text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400'>
+      <p className='_mb-8 mb-0 _text-lg _font-normal _sm:px-16 _lg:text-xl _xl:px-48 max-w-2xl text-gray-500 dark:text-gray-400'>
         I'm a lead software engineer specializing in building exceptional digital experiences. Currently, I'm focused on
         building accessible, human-centered products at Temper / Forge.
       </p>
-      <div className='flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 w-full sm:w-unset'>
-        <a
-          href='/#contact'
-          className='inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-full bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900'
-        >
-          Get In Touch
-          {/* <svg
-              className='ml-2 -mr-1 w-5 h-5'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                fillRule='evenodd'
-                d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
-                clipRule='evenodd'
-              ></path>
-            </svg> */}
-        </a>
+      <div className='hidden mb-0 flex flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0 lg:mb-16'>
         <a
           href='#'
-          className='inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-full border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 text-white'
+          className='inline-flex items-center justify-center rounded-lg bg-primary-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900'
         >
-          {/* <svg
-              className='mr-2 -ml-1 w-5 h-5'
+          Learn more
+          <svg
+            className='-mr-1 ml-2 h-5 w-5'
+            fill='currentColor'
+            viewBox='0 0 20 20'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              fillRule='evenodd'
+              d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+              clipRule='evenodd'
+            ></path>
+          </svg>
+        </a>
+        {/* <a
+            href='#'
+            className='inline-flex items-center justify-center rounded-lg border border-gray-300 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800'
+          >
+            <svg
+              className='-ml-1 mr-2 h-5 w-5'
               fill='currentColor'
               viewBox='0 0 20 20'
               xmlns='http://www.w3.org/2000/svg'
             >
               <path d='M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z'></path>
-            </svg> */}
-          Resume
-        </a>
+            </svg>
+            Watch video
+          </a> */}
       </div>
-      <div className='hidden px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36'>
-        <span className='font-semibold text-gray-400 uppercase'>FEATURED IN</span>
-        <div className='flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
-          <a href='#' className='mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400'>
+      <div className='hidden _px-4 _md:max-w-screen-md _lg:px-36 mx-auto text-center sm:text-left lg:max-w-screen-lg'>
+        <span className='font-semibold uppercase text-gray-400'>FEATURED IN</span>
+        <div className='mt-8 flex flex-wrap items-center justify-center text-gray-500 sm:justify-between'>
+          <a href='#' className='mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0'>
             <svg className='h-8' viewBox='0 0 132 29' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path
                 d='M39.4555 5.17846C38.9976 3.47767 37.6566 2.13667 35.9558 1.67876C32.8486 0.828369 20.4198 0.828369 20.4198 0.828369C20.4198 0.828369 7.99099 0.828369 4.88379 1.64606C3.21571 2.10396 1.842 3.47767 1.38409 5.17846C0.566406 8.28567 0.566406 14.729 0.566406 14.729C0.566406 14.729 0.566406 21.2051 1.38409 24.2796C1.842 25.9804 3.183 27.3214 4.88379 27.7793C8.0237 28.6297 20.4198 28.6297 20.4198 28.6297C20.4198 28.6297 32.8486 28.6297 35.9558 27.812C37.6566 27.3541 38.9976 26.0131 39.4555 24.3123C40.2732 21.2051 40.2732 14.7618 40.2732 14.7618C40.2732 14.7618 40.3059 8.28567 39.4555 5.17846Z'
@@ -141,7 +120,7 @@ export default function Hero() {
               />
             </svg>
           </a>
-          <a href='#' className='mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400'>
+          <a href='#' className='mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0'>
             <svg className='h-11' viewBox='0 0 208 42' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path
                 d='M42.7714 20.729C42.7714 31.9343 33.6867 41.019 22.4814 41.019C11.2747 41.019 2.19141 31.9343 2.19141 20.729C2.19141 9.52228 11.2754 0.438965 22.4814 0.438965C33.6867 0.438965 42.7714 9.52297 42.7714 20.729Z'
@@ -157,7 +136,7 @@ export default function Hero() {
               />
             </svg>
           </a>
-          <a href='#' className='mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400'>
+          <a href='#' className='mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0'>
             <svg className='h-11' viewBox='0 0 120 41' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path
                 d='M20.058 40.5994C31.0322 40.5994 39.9286 31.7031 39.9286 20.7289C39.9286 9.75473 31.0322 0.858398 20.058 0.858398C9.08385 0.858398 0.1875 9.75473 0.1875 20.7289C0.1875 31.7031 9.08385 40.5994 20.058 40.5994Z'
@@ -179,20 +158,28 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      {/* </div> */}
-      <div
-        className='hero-bg absolute inset-0 _bg-blue-900 mx-full z-[-1]'
-        onMouseMove={(ev) => handleMouseMove(ev)}
-        style={{ perspectiveOrigin: `${perspectiveOrigin.x}% ${perspectiveOrigin.y}%` }}
-      >
-        <span style={{ animationDelay: '0.2s', transform: 'translate3d(0, 0, -100px)' }}></span>
-        <span style={{ animationDelay: '0.4s', transform: 'translate3d(0, 0, -200px)' }}></span>
-        <span style={{ animationDelay: '0.6s', transform: 'translate3d(0, 0, -300px)' }}></span>
-        <span style={{ animationDelay: '0.8s', transform: 'translate3d(0, 0, -500px)' }}></span>
-        <span style={{ animationDelay: '1s', transform: 'translate3d(0, 0, -800px)' }}></span>
-        <span style={{ animationDelay: '1.2s', transform: 'translate3d(0, 0, -1300px)' }}></span>
-        <span style={{ animationDelay: '1.4s', transform: 'translate3d(0, 0, -2100px)' }}></span>
+    </div>
+  )
+}
+
+function HeroRight() {
+  return (
+    <div className='flex basis-1/2 flex-col gap-y-6'>
+      <div className='row-1 h-[50%]'>
+        <img
+          className='absolute h-full w-full rounded object-cover'
+          src='https://picsum.photos/1920/1920.webp'
+          alt=''
+        />
       </div>
-    </section>
+      <div className='row-2 grid h-[40%] grid-cols-2 gap-x-6'>
+        <div className='item-1 rounded'>
+          <img src='https://picsum.photos/1920/1920.webp' alt='' />
+        </div>
+        <div className='item-2 rounded'>
+          <img src='https://picsum.photos/1920/1920.webp' alt='' />
+        </div>
+      </div>
+    </div>
   )
 }

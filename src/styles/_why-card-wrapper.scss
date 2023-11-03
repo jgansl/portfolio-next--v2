@@ -27,7 +27,8 @@ section.home-why .why-card-wrapper .why-card-container {
 }
 
 section.home-why .why-card-wrapper .card {
-  min-width: 325px;
+  // min-width: 325px;
+  width: max(325px, 26vw);
   min-height: 460px;
 }
 

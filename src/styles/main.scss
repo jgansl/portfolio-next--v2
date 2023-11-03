@@ -103,21 +103,6 @@ h2:first-child {
   scrollbar-width: none; /* Firefox */
 }
 
-
-.hero--home {
-  @apply relative z-10;
-  &:before {
-    @apply absolute z-[-1];
-    content: "";
-    border-radius: 2rem;
-    background: #357;
-    top: 0;//calc(var(--inline-padding) / 2);
-    height: 100%;//calc(100% - var(--inline-padding));
-    width: 100%;//calc(100% + var(--inline-padding));
-    left: 0;//calc(var(--inline-padding) / -2);
-  }
-}
-
 .bottom-corner > * {
   border-radius: 0 3rem 0 0;
 }

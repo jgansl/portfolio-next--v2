@@ -1,0 +1,24 @@
+
+.hero--home {
+  @apply relative z-10;
+  --buffer: 1.5rem;
+  // padding: var(--buffer);
+  
+  &:before {
+    @apply absolute z-[-1];
+    top: var(--buffer);
+    left: var(--buffer);
+    width: calc(100% - var(--buffer) * 2);
+    height: calc(100% - var(--buffer) * 2);
+
+    content: "";
+    border-radius: 2rem;
+    background: #1a1a1a;
+    background-image: url(https://picsum.photos/1920/1080.webp) ;
+    top: calc(var(--buffer) * 3 / 4);
+    height: calc( 100% - var(--buffer) * 3 / 2);
+    // width: calc( 100vw - var(--buffer) * 2);
+    // width: calc( 100dvw - var(--buffer) * 2);
+    // left: var(--buffer);
+  }
+}

@@ -1,5 +1,9 @@
 import { Layout } from '@/components/dom/Layout'
-import localFont from 'next/font/local'
+import { Providers } from './providers'
+// import localFont from 'next/font/local'
+import { GeistSans, GeistMono } from 'geist/font'
+// import clsx from 'clsx'
+
 import '@/global.css'
 import '@/styles/main.scss'
 
@@ -11,19 +15,19 @@ export const metadata = {
   },
 }
 
-const themeFont = localFont({
-  src: [
-    {
-      path: '../public/fonts/Satoshi/Fonts/Variable/Satoshi-Variable.ttf',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Satoshi/Fonts/Variable/Satoshi-VariableItalic.ttf',
-      style: 'italic',
-    },
-  ],
-  display: 'swap',
-})
+// const themeFont = localFont({
+//   src: [
+//     {
+//       path: '../public/fonts/Satoshi/Fonts/Variable/Satoshi-Variable.ttf',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../public/fonts/Satoshi/Fonts/Variable/Satoshi-VariableItalic.ttf',
+//       style: 'italic',
+//     },
+//   ],
+//   display: 'swap',
+// })
 
 export default function RootLayout({ children }) {
   return (
@@ -33,9 +37,11 @@ export default function RootLayout({ children }) {
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={themeFont.className}>
+      <body className={GeistSans.className}>
         {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
-        <Layout>{children}</Layout>
+				<Providers>
+          <Layout>{children}</Layout>
+				</Providers>
       </body>
     </html>
   )
