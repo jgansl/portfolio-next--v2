@@ -1,4 +1,5 @@
 import { Layout } from '@/components/dom/Layout'
+import { Analytics } from '@vercel/analytics/react'
 import { Providers } from './providers'
 // import localFont from 'next/font/local'
 import { GeistSans, GeistMono } from 'geist/font'
@@ -39,9 +40,10 @@ export default function RootLayout({ children }) {
       <head />
       <body className={GeistSans.className}>
         {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
-				<Providers>
+        <Providers>
           <Layout>{children}</Layout>
-				</Providers>
+        </Providers>
+        <Analytics />
       </body>
     </html>
   )
